@@ -11,6 +11,10 @@ generador de banner de perfil (HTML/CSS -> PNG) personalizable.
 No hay backend ni servicio en la nube: todo corre localmente, con tu propia
 sesión de LinkedIn, y los datos extraídos se quedan en tu máquina.
 
+![Terminal ejecutando el scraper](docs/screenshots/terminal-example.png)
+
+![Ejemplo de banner generado por la plantilla](docs/screenshots/banner-example.png)
+
 ## ⚠️ Antes de usarlo
 
 - Este proyecto usa **tu propia cuenta y sesión** de LinkedIn (login manual
