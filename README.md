@@ -1,5 +1,8 @@
 # LinkedIn Audit
 
+[![Typecheck](https://github.com/imkhub1/linkedin-profile-auditor/actions/workflows/typecheck.yml/badge.svg)](https://github.com/imkhub1/linkedin-profile-auditor/actions/workflows/typecheck.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Herramientas de automatización con [Playwright](https://playwright.dev) para
 extraer **tu propio** perfil de LinkedIn y auditarlo: headline, about,
 experiencia, skills, certificaciones y recomendaciones. Incluye además un
