@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--
+  PLANTILLA DE BANNER PARA LINKEDIN (1584x396px)
+  ================================================
+  Edita el CONTENIDO (sección <body>, al final del archivo) y las
+  variables de color/tema (:root) a tu gusto. Luego genera la imagen con:
+
+      npm run banner:render
+
+  El resultado queda en data/banner/banner.png, listo para subir a
+  LinkedIn (Perfil -> Editar foto de portada).
+-->
+<style>
+  :root {
+    --bg-dark: #14161a;
+    --bg-mid: #1c1f24;
+    --bg-light: #24272d;
+    --accent: #c9a876;       /* color de acento (línea, resaltados, logo) */
+    --text-primary: #f5f3ef;
+    --text-secondary: #d9dbe0;
+    --text-muted: #8b8f96;
+    --text-faint: #75787f;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('../../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2') format('woff2');
+    font-weight: 800;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1584px;
+    height: 396px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05) 0%, transparent 40%),
+      linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 45%, var(--bg-light) 100%);
+  }
+
+  .diagonal {
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    width: 500px;
+    height: 550px;
+    background: linear-gradient(135deg, transparent 48%, color-mix(in srgb, var(--accent) 15%, transparent) 48%, color-mix(in srgb, var(--accent) 15%, transparent) 52%, transparent 52%);
+  }
+
+  /*
+    ZONA SEGURA (importante, no tocar el layout sin considerar esto):
+    La foto de perfil circular de LinkedIn se superpone sobre la esquina
+    INFERIOR IZQUIERDA del banner (aprox. 0-260px de ancho x últimos
+    ~200px de alto). El bloque de texto y el logo de este template están
+    posicionados fuera de esa zona a propósito. Si mueves elementos,
+    verifica el resultado subiéndolo a LinkedIn antes de darlo por bueno
+    (el editor de LinkedIn muestra un preview con tu foto real encima).
+  */
+
+  .company-logo {
+    position: absolute;
+    left: 239px;
+    top: 145px;
+    width: 145px;
+    opacity: 0.85;
+    /* Si tu logo es oscuro sobre fondo blanco, procésalo primero con
+       `npm run banner:logo` (ver src/banner/process-logo.mjs) para
+       quitar el fondo y aclarar el trazo antes de usarlo aquí. */
+  }
+
+  .accent-line {
+    position: absolute;
+    top: 118px;
+    left: 750px;
+    width: 2px;
+    height: 200px;
+    background: linear-gradient(180deg, transparent, var(--accent) 15%, var(--accent) 85%, transparent);
+    opacity: 0.6;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 786px;
+    padding-right: 100px;
+    padding-bottom: 68px;
+  }
+
+  .name {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .role {
+    font-size: 58px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    line-height: 1.05;
+    margin-bottom: 22px;
+  }
+
+  .role .pipe {
+    color: var(--accent);
+    font-weight: 400;
+    margin: 0 16px;
+  }
+
+  .tagline {
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+  }
+
+  .tagline .highlight {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .detail {
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--text-faint);
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="diagonal"></div>
+  <div class="accent-line"></div>
+
+  <!-- Logo de tu empresa (opcional). Coloca el archivo original en
+       data/banner/company-logo.png, procésalo con `npm run banner:logo`
+       (genera data/banner/company-logo-processed.png) y descomenta: -->
+  <!-- <img class="company-logo" src="../../data/banner/company-logo-processed.png" /> -->
+
+  <div class="content">
+    <div class="name">TU NOMBRE COMPLETO</div>
+    <div class="role">TU ROL <span class="pipe">|</span> ESPECIALIDAD</div>
+    <div class="tagline">Tu propuesta de valor en una línea corta</div>
+    <div class="detail">Skill A · Skill B · Skill C · Skill D</div>
+  </div>
+</body>
+</html>
