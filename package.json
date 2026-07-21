@@ -1,7 +1,7 @@
 {
   "name": "linkedin-profile-auditor",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "type": "module",
   "description": "Extrae tu propio perfil de LinkedIn con Playwright y audítalo (headline, about, experiencia, skills, certificaciones, recomendaciones). Incluye generador de banner de perfil.",
   "license": "MIT",
@@ -10,12 +10,20 @@
     "url": "https://github.com/imkhub1/linkedin-profile-auditor.git"
   },
   "keywords": ["linkedin", "playwright", "profile-audit", "career", "automation"],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
+    "start": "node src/cli.mjs",
+    "doctor": "node src/doctor.mjs",
     "login": "node src/scraping/login.mjs",
     "scrape": "node src/scraping/scrape-profile.mjs",
+    "logout": "node src/cleanup.mjs logout",
+    "clean": "node src/cleanup.mjs clean",
     "banner:logo": "node src/banner/process-logo.mjs",
     "banner:render": "node src/banner/render-banner.mjs",
-    "typecheck": "tsc --project jsconfig.json"
+    "typecheck": "tsc --project jsconfig.json",
+    "test": "node --test"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

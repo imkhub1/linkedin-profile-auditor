@@ -1,5 +1,16 @@
 # Known Issues
 
+## LinkedIn interface changes
+
+LinkedIn can change page structure, session checks, locale labels, and lazy
+loading without notice. The extractor stops rather than saving a result when
+it detects a login/checkpoint page or insufficient main content. Rerun
+`npm run login` if the session expires, then run `npm run scrape` again.
+
+Text extraction cannot assess profile photos, banners, rich-media quality,
+private settings, analytics, or visual layout. The audit must label those
+items as not assessable unless the user supplies separate evidence.
+
 ## Playwright skill availability
 
 LinkedIn uses a closed Skills taxonomy whose available entries can vary by
