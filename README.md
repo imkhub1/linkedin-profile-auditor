@@ -34,9 +34,12 @@ npm run login      Login manual en una ventana de navegador
 npm run scrape     Extrae automáticamente el perfil de la cuenta autenticada
 ```
 
-Después de `npm run scrape`, el texto queda en `data/profile/profile.txt`.
-Pide al agente una auditoría; tras tu consentimiento, guardará el informe en
-`data/audit/report.md`.
+Después de `npm run scrape`, el texto queda en `data/profile/profile.txt` y
+los estados de completitud en `data/profile/profile.json`. El scraper también
+intenta guardar foto y banner acotados en `data/profile/visual/` y consulta Open
+to Work de forma exclusiva de lectura. Pide al agente una auditoría; tras tu
+consentimiento para el texto y, por separado, para las imágenes, guardará el
+informe en `data/audit/report.md`.
 
 No necesitas buscar ni pegar tu URL de LinkedIn. Si indicas una URL de forma
 manual, debe coincidir con el perfil de la sesión autenticada; los perfiles de
@@ -48,9 +51,11 @@ terceras personas se rechazan.
   ni guarda tu contraseña.
 - `.auth/state.json` conserva una cookie de sesión sensible para evitar repetir
   el login. No se sube a Git, pero debe tratarse como una credencial.
-- La extracción y los informes viven en `data/`, también ignorado por Git.
+- La extracción, configuraciones privadas, evidencia visual e informes viven
+  en `data/`, también ignorado por Git.
 - El CLI no envía el perfil a ningún servicio. Un agente solo puede leerlo
-  después de que le des consentimiento explícito.
+  después de que le des consentimiento explícito. Foto y banner requieren un
+  consentimiento adicional en cada auditoría.
 - Usa la herramienta de forma ocasional para tu propio perfil. LinkedIn limita
   el uso de automatización en sus [Términos de Servicio](https://www.linkedin.com/legal/user-agreement).
 
@@ -65,8 +70,10 @@ npm run clean      # Elimina perfil e informes locales
 
 La skill local revisa el texto observable de headline, About, experiencia,
 skills, educación, certificaciones, Featured, actividad y recomendaciones.
-No inventa métricas ni evalúa foto, banner, ajustes privados, endorsements,
-analytics ni elementos que no estén presentes en la extracción.
+Evalúa foto y banner solo si se capturaron y autorizas su análisis. Open to
+Work se resume de forma privada cuando la configuración se puede verificar.
+Si LinkedIn no entrega el detalle completo de Skills o Certificaciones, el
+reporte lo advierte y no puntúa ni recomienda cambios para esa sección.
 
 ## Banner Opcional
 

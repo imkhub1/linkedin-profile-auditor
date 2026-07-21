@@ -3,8 +3,10 @@
 > El flujo recomendado es usar la skill
 > `.agents/skills/linkedin-profile-auditor/SKILL.md` con un agente compatible.
 > El agente debe pedir consentimiento antes de leer `data/profile/profile.txt`
-> y guardar el resultado en `data/audit/report.md`. Este checklist sirve como
-> referencia manual y no sustituye las reglas de evidencia de la skill.
+> y `profile.json`, y un consentimiento independiente antes de abrir foto o
+> banner capturados localmente. Guarda el resultado en `data/audit/report.md`.
+> Este checklist sirve como referencia manual y no sustituye las reglas de
+> evidencia de la skill.
 
 Este checklist es la misma metodología usada para auditar perfiles con este
 proyecto. Puedes aplicarla manualmente sobre tu `data/profile/profile.txt`,
@@ -75,6 +77,8 @@ Para cada rol relevante:
 - [ ] ¿La educación tiene contexto (proyectos, especialización) si aporta
       a tu narrativa actual?
 - [ ] ¿Las certificaciones son recientes y relevantes a tu rol objetivo?
+- [ ] ¿`profile.json` confirma que el inventario detallado de certificaciones
+      está completo? Si no, no concluyas que falta una certificación.
 
 ## 8. Banner / Foto de portada
 
@@ -90,9 +94,17 @@ Para cada rol relevante:
 
 - [ ] Foto profesional, rostro ocupa ~60% del encuadre, buena iluminación.
 - [ ] Si compartes una imagen para revisión, ¿es profesional, reciente y
-      adecuada para tu sector? No puede evaluarse desde texto extraído.
+       adecuada para tu sector? Requiere consentimiento visual separado.
 
-## 10. Conexiones y actividad
+## 10. Open to Work
+
+- [ ] ¿`profile.json` confirma si está activo, inactivo, no configurado o no
+      disponible para revisión?
+- [ ] Si está activo, ¿su visibilidad y preferencias se alinean con el objetivo
+      profesional? No copies títulos o ubicaciones privadas al informe salvo
+      que la persona lo pida.
+
+## 11. Conexiones y actividad
 
 - [ ] ¿Tu red y actividad respaldan tu objetivo profesional? Registra solo
       datos que puedas verificar en tu propia cuenta.

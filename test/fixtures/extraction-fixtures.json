@@ -1,0 +1,16 @@
+{
+  "skillsComplete": {
+    "headingText": "Skills",
+    "records": ["Playwright", "TypeScript", "Playwright"],
+    "declared": 2,
+    "collapsed": false
+  },
+  "certificationsPartial": {
+    "headingText": "Licencias y certificaciones",
+    "records": ["Playwright: Design Patterns"],
+    "declared": 3,
+    "collapsed": false
+  },
+  "openToWorkSpanish": "Disponible para trabajar\nPuestos de trabajo\nQA Engineer\nUbicaciones\nCosta Rica\nModalidades de trabajo\nRemoto\nTipos de empleo\nTiempo completo\nSolo reclutadores",
+  "openToWorkDisabled": "Open to work is off"
+}

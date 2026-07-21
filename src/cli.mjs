@@ -16,7 +16,7 @@ const copy = {
     quit: "Salir",
     browser: "Chromium no está instalado. ¿Descargarlo ahora? (s/N): ",
     dependencies: "Faltan dependencias. ¿Instalarlas ahora? (s/N): ",
-    next: "Cuando termine la extracción, abre este proyecto con un agente compatible y pide una auditoría. El agente solicitará tu consentimiento antes de leer el perfil.",
+    next: "La extracción guarda texto, metadatos y evidencia visual local. Abre este proyecto con un agente compatible y pide una auditoría: pedirá consentimiento antes de leer texto y otro permiso antes de analizar foto o banner.",
     cancelled: "Cancelado.",
   },
   en: {
@@ -31,7 +31,7 @@ const copy = {
     quit: "Quit",
     browser: "Chromium is not installed. Download it now? (y/N): ",
     dependencies: "Dependencies are missing. Install them now? (y/N): ",
-    next: "After extraction, open this project with a compatible agent and ask for an audit. The agent will request consent before reading the profile.",
+    next: "Extraction stores local text, metadata, and visual evidence. Open this project with a compatible agent and ask for an audit: it will request consent before reading text and separate permission before analyzing a photo or banner.",
     cancelled: "Cancelled.",
   },
 }[language];

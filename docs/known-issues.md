@@ -7,9 +7,17 @@ loading without notice. The extractor stops rather than saving a result when
 it detects a login/checkpoint page or insufficient main content. Rerun
 `npm run login` if the session expires, then run `npm run scrape` again.
 
-Text extraction cannot assess profile photos, banners, rich-media quality,
-private settings, analytics, or visual layout. The audit must label those
-items as not assessable unless the user supplies separate evidence.
+The scraper captures narrowly scoped photo/banner artifacts under
+`data/profile/visual/` when LinkedIn exposes reliable header elements. Their
+analysis requires separate consent for each audit; an absent or failed capture
+remains not assessable. It also attempts to read Open to Work preferences in
+read-only mode, but account experiments, locale changes, or access restrictions
+can leave the status `unavailable`.
+
+Successful navigation to a Skills or Certifications detail page does not prove
+that all records loaded. The scraper records semantic completion in
+`data/profile/profile.json`; the audit excludes an incomplete inventory from
+formal scoring and recommendations.
 
 ## Playwright skill availability
 
