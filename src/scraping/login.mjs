@@ -1,6 +1,5 @@
 // Abre un navegador visible para que inicies sesión manualmente en LinkedIn.
-// Al terminar, guarda la sesión (cookies/localStorage) en .auth/state.json
-// para que scrape-profile.mjs no tenga que volver a loguearse.
+// Detecta la sesión autenticada y la guarda en .auth/state.json.
 import { chromium } from "playwright";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -19,13 +18,13 @@ const page = await context.newPage();
 await page.goto("https://www.linkedin.com/login");
 
 console.log("\n>> Inicia sesión manualmente en la ventana del navegador.");
-console.log(">> Cuando veas tu feed/perfil cargado, vuelve aquí y presiona ENTER.\n");
+console.log(">> La sesión se guardará automáticamente al completar el login.\n");
 
-/** @type {Promise<void>} */
-const waitForEnter = new Promise((resolve) => {
-  process.stdin.once("data", () => resolve());
-});
-await waitForEnter;
+for (;;) {
+  const cookies = await context.cookies();
+  if (cookies.some((cookie) => cookie.name === "li_at" && cookie.value)) break;
+  await page.waitForTimeout(1000);
+}
 
 await context.storageState({ path: statePath });
 console.log(`\nSesión guardada en ${statePath}`);

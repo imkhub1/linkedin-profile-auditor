@@ -40,10 +40,13 @@ Para cada rol relevante:
 - [ ] ¿Tienes endorsements en tus skills más importantes? (0 endorsements
       es la debilidad más común y de mayor impacto en búsquedas).
 - [ ] ¿Falta alguna herramienta/skill mencionada en tu About o Experiencia
-      que no esté en la lista formal de Skills? (Nota: LinkedIn solo
-      permite skills de su taxonomía cerrada — algunas herramientas muy
-      nuevas pueden no estar disponibles para agregar, eso no es un error
-      tuyo).
+       que no esté en la lista formal de Skills? (Nota: LinkedIn solo
+       permite skills de su taxonomía cerrada — algunas herramientas muy
+       nuevas pueden no estar disponibles para agregar, eso no es un error
+       tuyo. Si Playwright aplica, recomiéndala y confirma primero si está
+       disponible para esa cuenta; si no lo está, usa `Test Automation Tools`
+       como alternativa y menciona Playwright en headline, About y
+       experiencia).
 
 ## 5. Recomendaciones (Recommendations)
 

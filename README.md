@@ -96,8 +96,8 @@ linkedin/
 npm run login
 ```
 
-Se abre un navegador. Inicia sesión manualmente, vuelve a la terminal y
-presiona ENTER. La sesión queda guardada en `.auth/state.json`.
+Se abre un navegador visible. Inicia sesión manualmente; al completar el
+login, la sesión queda guardada automáticamente en `.auth/state.json`.
 
 ### 2. Extraer tu perfil
 
